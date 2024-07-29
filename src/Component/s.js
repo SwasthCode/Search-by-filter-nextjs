@@ -14,7 +14,7 @@ const ListSelect = ({ items, onSelect }) => {
               cursor: "pointer",
               border: "1px solid #ddd",
               padding: "5px 10px",
-              borderRadius: "4px"
+              borderRadius: "4px",
             }}
           >
             {item}
@@ -29,7 +29,8 @@ const Home = () => {
   const [searchInput, setSearchInput] = useState("");
   const [selectedItem, setSelectedItem] = useState("");
   const [filteredItems, setFilteredItems] = useState([]);
-  const items = ["Car", "Copy", "Laptop", "App", "Application"];
+  const [storedFilteredItems, setStoredFilteredItems] = useState([]);
+  const items = ["Apple", "Car", "Copy", "Laptop", "App", "Application"];
 
   const handleSearch = (e) => {
     setSearchInput(e.target.value);
@@ -53,12 +54,7 @@ const Home = () => {
     setStoredFilteredItems(selectionFilteredItems);
   }, [searchInput, selectedItem]);
 
-  const handleDeselect = (item) => {
-    if (selectedItems.includes(item)) {
-      setSelectedItems(selectedItems.filter((i) => i !== item));
-      setFilteredItems([...filteredItems, item]);
-    }
-  };
+
 
   return (
     <div>
