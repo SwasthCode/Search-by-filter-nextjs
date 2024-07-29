@@ -29,7 +29,7 @@ const Home = () => {
   const [searchInput, setSearchInput] = useState("");
   const [selectedItems, setSelectedItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
-  const items = ["Apple", "Car", "Copy", "Laptop", "App", "Application"];
+  const items = ["Car", "Copy", "Laptop", "Pen", "Application"];
 
   const handleSearch = (e) => {
     setSearchInput(e.target.value);
